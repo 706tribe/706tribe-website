@@ -1,7 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IndexContent from '../components/IndexContent.astro';
+
+const firstSection = [
+    '706 是一个起源于北京、遍布全球的青年社区',
+    '706 Tribe 是我们连续三年在黑石城打造的集体空间',
+    '我们致力于遵循火人节的十原则',
+    '为营地成员提供最纯粹的火人节体验',
+];
+
+const secondSection = [
+    '我们营地助力有想法的成员',
+    '将创意化为火人节的艺术装置',
+    '打造独特的沙漠建筑',
+    '并将中国特色的文化体验带到火人节',
+];
+
+const aboutUsText = '了解更多';
+const joinUsText = '加入我们';
 ---
 
 <Layout>
-	<h1>欢迎来到 706 Tribe</h1>
+    <IndexContent firstSection={firstSection} secondSection={secondSection} aboutUsText={aboutUsText} joinUsText={joinUsText} />
 </Layout>

@@ -1,11 +1,12 @@
 ---
 import Navigation from './Navigation.astro';
+import logo from '../assets/logo.svg';
 ---
 
 <header class="header">
     <div class="logo">
         <a href="/">
-            <img src="/src/assets/logo.svg" alt="Logo" width="40" height="40">
+            <img src={logo.src} alt="Logo" width="40" height="40">
         </a>
     </div>
     <Navigation />

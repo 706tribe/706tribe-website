@@ -1,7 +1,25 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import IndexContent from '../../components/IndexContent.astro';
+
+const firstSection = [
+    '706 is a global youth community originating from Beijing',
+    '706 Tribe is our collective space at Black Rock City',
+    'We are committed to following the Ten Principles of Burning Man',
+    'Providing the purest Burning Man experience for camp members',
+];
+
+const secondSection = [
+    'Our camp empowers members with ideas',
+    'Turn creativity into Burning Man art installations',
+    'Create unique desert architecture',
+    'Bring Chinese cultural experiences to Burning Man',
+];
+
+const aboutUsText = 'Learn More';
+const joinUsText = 'Camp with Us';
 ---
 
 <Layout>
-	<h1>Welcome to 706 Tribe</h1>
+    <IndexContent firstSection={firstSection} secondSection={secondSection} aboutUsText={aboutUsText} joinUsText={joinUsText} />
 </Layout>
