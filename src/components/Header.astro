@@ -1,0 +1,33 @@
+---
+import Navigation from './Navigation.astro';
+---
+
+<header class="header">
+    <div class="logo">
+        <a href="/">
+            <img src="/src/assets/logo.svg" alt="Logo" width="40" height="40">
+        </a>
+    </div>
+    <Navigation />
+</header>
+
+<style>
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 40px;
+        width: auto;
+    }
+</style>
