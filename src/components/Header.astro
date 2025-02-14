@@ -1,34 +1,48 @@
 ---
-import Navigation from './Navigation.astro';
-import logo from '../assets/logo.svg';
+const currentPath = Astro.url.pathname;
+const lang = currentPath.startsWith('/en') ? 'en' : 'zh';
+
+const navLinks = {
+  zh: {
+    home: '首页',
+    about: '关于我们',
+    join: '加入营地',
+    langSwitch: 'English'
+  },
+  en: {
+    home: 'Home',
+    about: 'About Us',
+    join: 'Join Camp',
+    langSwitch: '中文'
+  }
+};
+
+const t = navLinks[lang];
+const langPrefix = lang === 'en' ? '/en' : '';
 ---
 
-<header class="header">
-    <div class="logo">
-        <a href="/">
-            <img src={logo.src} alt="Logo" width="40" height="40">
-        </a>
+<div class="navbar bg-base-100 shadow-sm">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+        </div>
+        <ul class="menu menu-lg dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+            <li><a href={`${langPrefix}/`}>{t.home}</a></li>
+            <li><a href={`${langPrefix}/about`}>{t.about}</a></li>
+            <li><a href={`${langPrefix}/join`}>{t.join}</a></li>
+        </ul>
+      </div>
+      <a class="btn btn-ghost text-xl" href={`${langPrefix}/`}>706 Tribe</a>
     </div>
-    <Navigation />
-</header>
-
-<style>
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-        background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo {
-        display: flex;
-        align-items: center;
-    }
-
-    .logo img {
-        height: 40px;
-        width: auto;
-    }
-</style>
+    <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-lg menu-horizontal px-1">
+            <li><a href={`${langPrefix}/`}>{t.home}</a></li>
+            <li><a href={`${langPrefix}/about`}>{t.about}</a></li>
+            <li><a href={`${langPrefix}/join`}>{t.join}</a></li>
+        </ul>
+    </div>
+    <div class="navbar-end">
+      <button class="btn btn-outline" onclick={`window.location.href='${lang === 'en' ? Astro.url.pathname.replace('/en', '') : `/en${Astro.url.pathname}`}'`}>{t.langSwitch}</button>
+    </div>
+  </div>

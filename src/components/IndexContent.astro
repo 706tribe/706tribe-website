@@ -11,86 +11,32 @@ const { firstSection, secondSection, aboutUsText, joinUsText } = Astro.props;
 import firstImg from '../assets/images/lounge2023.jpg';
 import secondImg from '../assets/images/massage.jpg';
 ---
-
-<div class="grid-container bg-gray-100">
-    <section class="image-left">
-        <div class="left-col">
-            <img src={firstImg.src} alt="Lounge" class="section-image" />
-        </div>
-        <div class="right-col">
-            <p class="text-xl leading-relaxed flex flex-col justify-center h-full space-y-8">
+<div class="container mx-auto px-4 py-8">
+    <div class="bg-base-200 rounded-lg max-w-[1024px] w-full mx-auto p-4 md:p-8">
+        <div class="flex flex-col lg:flex-row gap-8 items-center">
+            <img src={firstImg.src} alt="Lounge" class="w-full max-w-lg rounded-lg shadow-2xl" />
+            <div class="flex flex-col space-y-8">
                 {firstSection.map((text) => (
-                    <span>{text}</span>
+                    <p class="text-xl">{text}</p>
                 ))}
-                <span>
-                    <a href={`${Astro.url.pathname.startsWith('/en') ? '/en' : ''}/about`} class="mt-8 inline-block px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors w-fit">
-                        {aboutUsText}
-                    </a>
-                </span>
-            </p>
+                <button onclick={`window.location.href='${Astro.url.pathname.startsWith('/en') ? '/en' : ''}/about'`} class="btn btn-active btn-accent btn-lg w-fit">
+                    {aboutUsText}
+                </button>
+            </div>
         </div>
-    </section>
 
-    <section class="image-right">
-        <div class="left-col">
-            <p class="text-xl leading-relaxed flex flex-col justify-center h-full space-y-8">
+        <div class="divider my-8"></div>
+
+        <div class="flex flex-col lg:flex-row-reverse gap-8 items-center">
+            <img src={secondImg.src} alt="Activity" class="w-full max-w-lg rounded-lg shadow-2xl" />
+            <div class="flex flex-col space-y-8">
                 {secondSection.map((text) => (
-                    <span>{text}</span>
+                    <p class="text-xl">{text}</p>
                 ))}
-                <span>
-                    <a href={`${Astro.url.pathname.startsWith('/en') ? '/en' : ''}/join`} class="mt-8 inline-block px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors w-fit w-fit">
-                        {joinUsText}
-                    </a>
-                </span>
-            </p>
+                <button onclick={`window.location.href='${Astro.url.pathname.startsWith('/en') ? '/en' : ''}/join'`} class="btn btn-active btn-accent btn-lg w-fit">
+                    {joinUsText}
+                </button>
+            </div>
         </div>
-        <div class="right-col">
-            <img src={secondImg.src} alt="Placeholder" class="section-image" />
-        </div>
-    </section>
+    </div>
 </div>
-
-<style>
-    .grid-container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem;
-    }
-
-    section {
-        display: grid;
-        gap: 2rem;
-        margin-bottom: 3rem;
-    }
-
-    .image-left {
-        grid-template-columns: 60% 40%;
-        & .right-col {
-            text-align: left;
-        }
-    }
-
-    .image-right {
-        grid-template-columns: 40% 60%;
-        & .left-col {
-            text-align: right;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .image-left {
-            grid-template-columns: 1fr;
-        }
-
-        .image-right {
-            grid-template-columns: 1fr;
-            /* Reorder columns for mobile */
-            & .right-col {
-                order: -1;
-            }
-            & .left-col {
-                text-align: left;
-        }
-    }
-</style>
