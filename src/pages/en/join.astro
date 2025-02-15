@@ -3,5 +3,16 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout>
-	<h1>Join 706 Tribe</h1>
+	<div class="container mx-auto px-4 py-8">
+		<div class="bg-base-200 rounded-lg max-w-[1024px] w-full mx-auto p-4 md:p-8">
+			<div class="flex flex-col lg:flex-row gap-8 items-center">
+				<div class="flex flex-col space-y-8">
+					<p class="text-xl">706 Tribe grew out of an immigrant community, and we hope our members can speak Chinese. If you understand Chinese, please refer to the Chinese version of our "Join Us" page.</p>
+					<button onclick={`window.location.href='/join'`} class="btn btn-active btn-accent btn-lg w-fit">
+						Chinese Version
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </Layout>
