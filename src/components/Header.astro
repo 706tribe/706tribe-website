@@ -6,12 +6,14 @@ const navLinks = {
   zh: {
     home: '首页',
     about: '关于我们',
+    history: '营地历史',
     join: '加入营地',
     langSwitch: 'English'
   },
   en: {
     home: 'Home',
     about: 'About Us',
+    history: 'Our History',
     join: 'Join Camp',
     langSwitch: '中文'
   }
@@ -27,9 +29,25 @@ const langPrefix = lang === 'en' ? '/en' : '';
         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
         </div>
-        <ul class="menu menu-lg dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        <ul tabindex="0" class="menu menu-lg dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
             <li><a href={`${langPrefix}/`}>{t.home}</a></li>
-            <li><a href={`${langPrefix}/about`}>{t.about}</a></li>
+            <li>
+              <a href={`${langPrefix}/about`}>{t.about}</a>
+              <ul class="p-2">
+                <li><a href={`${langPrefix}/2022`}>2022</a>
+                  <ul class="p-3">
+                    <li><a href={`${langPrefix}/2022/collector`}>Collector</a></li>
+                  </ul>
+                </li>
+                <li><a href={`${langPrefix}/2023`}>2023</a>
+                  <ul class="p-3">
+                    <li><a href={`${langPrefix}/2023/ark`}>Ark</a></li>
+                    <li><a href={`${langPrefix}/2023/respirator`}>Respirator</a></li>
+                  </ul>
+                </li>
+                <li><a href={`${langPrefix}/2024`}>2024</a></li>
+              </ul>
+            </li>
             <li><a href={`${langPrefix}/join`}>{t.join}</a></li>
         </ul>
       </div>
@@ -39,6 +57,27 @@ const langPrefix = lang === 'en' ? '/en' : '';
         <ul class="menu menu-lg menu-horizontal px-1">
             <li><a href={`${langPrefix}/`}>{t.home}</a></li>
             <li><a href={`${langPrefix}/about`}>{t.about}</a></li>
+            <li>
+              <details>
+                <summary>{t.history}</summary>
+                <ul class="p-2">
+                  <li>
+                    <a href={`${langPrefix}/2022`}>2022</a>
+                    <ul class="p-3">
+                      <li><a href={`${langPrefix}/2022/collector`}>Collector</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href={`${langPrefix}/2023`}>2023</a>
+                    <ul class="p-3">
+                      <li><a href={`${langPrefix}/2023/ark`}>Ark</a></li>
+                      <li><a href={`${langPrefix}/2023/respirator`}>Respirator</a></li>
+                    </ul>
+                  </li>
+                  <li><a href={`${langPrefix}/2024`}>2024</a></li>
+                </ul>
+              </details>
+            </li>
             <li><a href={`${langPrefix}/join`}>{t.join}</a></li>
         </ul>
     </div>
