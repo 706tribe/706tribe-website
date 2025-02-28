@@ -2,16 +2,19 @@
 layout: /src/layouts/MarkdownLayout.astro
 title: '2023'
 ---
+import aerial from '/src/assets/images/aerial2023.jpg';
+import lounge from '/src/assets/images/lounge2023.jpg';
+import respirator from '/src/assets/images/respirator.png';
 
 # 2023
 
 2023 年 706 仍然和 Global Village 一起，营地位于 6:45 & G。
 
-<img src="/src/assets/images/aerial2023.jpg" alt="Aerial" class="w-4/5 mx-auto" />
+<img src={aerial.src} alt="Aerial" class="w-4/5 mx-auto" />
 
 我们建设了 Ark
 
-<img src="/src/assets/images/lounge2023.jpg" alt="Lounge" class="w-4/5 mx-auto" />
+<img src={lounge.src} alt="Lounge" class="w-4/5 mx-auto" />
 
 按摩服务
 
@@ -20,7 +23,7 @@ title: '2023'
 
 Respirator 是一个可以呼吸的雕塑
 
-<img src="/src/assets/images/respirator.png" alt="Respirator" class="w-4/5 mx-auto" />
+<img src={respirator.src} alt="Respirator" class="w-4/5 mx-auto" />
 
 <div class="flex justify-center">
     <button onclick={`window.location.href='2023/respirator'`} class="btn btn-active btn-accent btn-lg btn-wide">

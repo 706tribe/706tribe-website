@@ -2,16 +2,18 @@
 layout: /src/layouts/MarkdownLayout.astro
 title: '2022'
 ---
+import lounge from '/src/assets/images/lounge2022.jpeg';
+import collector from '/src/assets/images/collector.webp';
 
 # 2022
 
 2022 的火人节是疫情后的第一年，也是706 Tribe 的元年。706 Tribe 作为 Global Village 的一部分，营地位于 3:00 & E。
 
-<img src="/src/assets/images/lounge2022.jpeg" alt="Lounge" class="w-4/5 mx-auto" />
+<img src={lounge.src} alt="Lounge" class="w-4/5 mx-auto" />
 
 营地的艺术家 Milton 把他的作品 The Collector 带到了火人节.
 
-<img src="/src/assets/images/collector.webp" alt="The Collector" class="w-4/5 mx-auto" />
+<img src={collector.src} alt="The Collector" class="w-4/5 mx-auto" />
 
 <div class="flex justify-center">
     <button onclick={`window.location.href='2022/collector'`} class="btn btn-active btn-accent btn-lg btn-wide">

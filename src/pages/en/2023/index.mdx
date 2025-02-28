@@ -2,16 +2,19 @@
 layout: /src/layouts/MarkdownLayout.astro
 title: '2023'
 ---
+import aerial from '/src/assets/images/aerial2023.jpg';
+import lounge from '/src/assets/images/lounge2023.jpg';
+import respirator from '/src/assets/images/respirator.png';
 
 # 2023
 
 In 2023, 706 continued to be part of Global Village, with our camp located at 6:45 & G.
 
-<img src="/src/assets/images/aerial2023.jpg" alt="Aerial" class="w-4/5 mx-auto" />
+<img src={aerial.src} alt="Aerial" class="w-4/5 mx-auto" />
 
 We built the Ark
 
-<img src="/src/assets/images/lounge2023.jpg" alt="Lounge" class="w-4/5 mx-auto" />
+<img src={lounge.src} alt="Lounge" class="w-4/5 mx-auto" />
 
 Massage Services
 
@@ -20,7 +23,7 @@ Massage Services
 
 Respirator is a breathing sculpture
 
-<img src="/src/assets/images/respirator.png" alt="Respirator" class="w-4/5 mx-auto" />
+<img src={respirator.src} alt="Respirator" class="w-4/5 mx-auto" />
 
 <div class="flex justify-center">
     <button onclick={`window.location.href='2023/respirator'`} class="btn btn-active btn-accent btn-lg btn-wide">
