@@ -12,11 +12,11 @@
   "dependencies": {
     "@astrojs/mdx": "^4.1.0",
     "@tailwindcss/vite": "^4.0.6",
-    "astro": "^5.2.5",
+    "astro": "^5.4.1",
     "tailwindcss": "^4.0.6"
   },
   "devDependencies": {
-    "daisyui": "^5.0.0-beta.8",
+    "daisyui": "^5.0.0",
     "eslint": "^8.57.1",
     "eslint-plugin-astro": "^1.3.1"
   }
