@@ -36,3 +36,7 @@ blockquote {
     @apply list-disc pl-6 mb-4;
 }
 
+.md-content .image-caption {
+    @apply text-center text-sm text-base-content/50 mt-0;
+}
+
