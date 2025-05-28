@@ -22,3 +22,17 @@ h4 {
 h5 {
     @apply text-xl font-bold;
 }
+
+blockquote {
+    @apply border-l-4 border-primary pl-4 italic text-base;
+    border-color: currentColor;
+}
+
+.md-content a {
+    @apply underline;
+}
+
+.md-content ul {
+    @apply list-disc pl-6 mb-4;
+}
+
